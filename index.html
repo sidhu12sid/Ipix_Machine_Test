@@ -7,13 +7,68 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="reg-form">
-            <h2>Register</h2>
+        <div class="overlay" id="overlay">
+            <div class="popup" id ="popup">
+
+                <h3>User Details</h3>
+                <ul class="details" id="detail">
+    
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="head">
+                <h2>Register</h2>
+            </div>
+            <div class="reg-form">
+                <form name="registration" id="myForm" onsubmit="return validateInputs(event) ">                   
+                    <label for="first">Name <span>*</span></label>
+                    <div class="names">    
+                        <div class="fname">
+                            <input type="text" id="first" name="first">
+                            <p>First</p>
+                        </div>
+                        <div class="lname">                       
+                            <input type="text" name="second" id="second"> 
+                            <p>Last</p>
+                        </div>                      
+                    </div>
+                    
+                    <label for="uname">Username <span>*</span></label>
+                    <input type="text" name="username" id="usename" autocomplete="username">
+
+                    <label for="email">Email <span>*</span></label>
+                    <input type="email" name="email" id="email" autocomplete="email">
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" class="phone"> 
+
+                    <label for="password">Password <span>*</span></label>
+                    <input type="password" name="password" id="password" autocomplete="current-password">
+
+                    <label for="bio">Short Bio</label>
+                    <textarea name="bio" id="bio" cols="59" rows="5"></textarea>
+                    <p>Share a little about yourself.....</p>
+                    <button type="submit" id="submit" onclick="appendDetails()">Submit</button>
+                    
+
+                     <!-- <input type="submit" value="Submit" class="button"> -->
+                </form>
+            </div>
         </div>
     </div>
+<script src="script.js"></script>
+<script>
+  const phonenb = document.querySelector("#phone");
+  window.intlTelInput(phonenb, {
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+</script>
 </body>
 </html>
