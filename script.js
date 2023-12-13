@@ -34,7 +34,6 @@ function validateInputs(event) {
         alert("Password must have length of 8 charcters")
         return false;
     }
-    // appendDetails()
     appendDetails()
     var element = document.getElementById("myForm");
     element.reset()    
