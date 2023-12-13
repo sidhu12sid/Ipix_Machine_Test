@@ -35,6 +35,7 @@ function validateInputs(event) {
         return false;
     }
     // appendDetails()
+    appendDetails()
     var element = document.getElementById("myForm");
     element.reset()    
 }
